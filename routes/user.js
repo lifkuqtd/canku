@@ -43,7 +43,7 @@ exports.login = function (req, res) {
       query = {'name': account, 'password': password}
     }
 
-    // 向数据库查询用户
+    // 向数据库查询用户(实际只支持名称登陆)
     db.user.findOne(query, function (err, user) {
       if (!err) {
         if (user != null) {
